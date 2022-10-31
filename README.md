@@ -1,27 +1,15 @@
-# Next.js + Tailwind CSS Example
+# Manageable web dev challenge (for user story number 2)
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<i>user story 2 - As a user, I want to be able to view available mentor slots and book one.</i>
 
-## Deploy your own
+- Hi Paul, I've completed the main objectives of this challenge however I want to make it clear this work isnt nearly as polished as id like it to be. Due to time constraints I didn't manage to complete things to my personal standards.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+- For example, I started out mobile first, and didnt have enough time to optimise the desktop version.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+- That being said, I think it's more than enough to have a conversation about and I'd love to talk about the things i would've done time permitting, and answer any questions you may have.
 
-## How to use
+Thanks! Dan :)
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## view the wireframes <a href="https://www.figma.com/file/q0FKr2RoDwJmJxMJUV4g8h/manageable?node-id=0%3A1">Here</a>
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## view the Live project <a href="https://manageable-dev-challenge-final-8r2q00cv9-dan2024.vercel.app/">Here</a>
