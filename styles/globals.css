@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-linen;
+  }
+
+  section {
+    @apply px-2 max-w-6xl mx-auto;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl;
+  }
+
+  .radio-btn:checked + label {
+    background-color: #0f1752ff;
+    color: white;
+  }
+
+  .grid-area-1 {
+    grid-area: 1 / 1;
+  }
+}
