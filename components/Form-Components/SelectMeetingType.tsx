@@ -19,17 +19,18 @@ export const SelectMeetingType = (props) => {
       <div className='mt-6'>
         <p>Please select the type of meeting you would like to shedule.</p>
 
-        {user.mentor.meetingsOffered.map((meeting) => (
-          <MeetingType
-            userProfilePictureURL={user.profilePictureURL}
-            mentorProfilePictureURL={user.mentor.profilePictureURL}
-            meetingID={meeting.ID}
-            title={meeting.title}
-            location={meeting.location}
-            duration={meeting.duration}
-            chooseMeetingType={chooseMeetingType}
-          />
-        ))}
+        {formData.meetingWith === 'mentor' &&
+          user.mentor.meetingsOffered.map((meeting) => (
+            <MeetingType
+              userProfilePictureURL={user.profilePictureURL}
+              mentorProfilePictureURL={user.mentor.profilePictureURL}
+              meetingID={meeting.ID}
+              title={meeting.title}
+              location={meeting.location}
+              duration={meeting.duration}
+              chooseMeetingType={chooseMeetingType}
+            />
+          ))}
       </div>
     </>
   )

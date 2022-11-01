@@ -2,7 +2,13 @@
 import { add, format, isSameDay, parseISO } from 'date-fns'
 import { useState } from 'react'
 
-export const SelectedDayTimeSlots = ({ selectedDay, user, nextStep, formData, setFormData }) => {
+export const SelectedDayTimeSlots = ({
+  selectedDay,
+  user,
+  nextStep,
+  formData,
+  setFormData,
+}) => {
   const [selectedRadioBtn, setSelectedRadioBtn] = useState()
 
   const isRadioSelected = (value) => selectedRadioBtn === value
@@ -18,8 +24,8 @@ export const SelectedDayTimeSlots = ({ selectedDay, user, nextStep, formData, se
     nextStep()
   }
 
-  const timesForSelectedDay = user.mentor.availibleDatesAndTimes.filter((date) =>
-    isSameDay(parseISO(date), selectedDay)
+  const timesForSelectedDay = user.mentor.availibleDatesAndTimes.filter(
+    (date) => isSameDay(parseISO(date), selectedDay)
   )
   const startTimesOnly = timesForSelectedDay.filter((_, i) => i % 2 === 0)
 
@@ -62,12 +68,3 @@ export const SelectedDayTimeSlots = ({ selectedDay, user, nextStep, formData, se
     </div>
   )
 }
-
-// <div
-//   key={startTime}
-//   className='max-w-lg border-2 border-royal-blue-dark rounded-md text-center py-3 mt-3'
-//   onClick={handleClick}
-// >
-//   {format(parseISO(startTime), 'HH:mm')} :{' '}
-//   {format(add(parseISO(startTime), { minutes: 50 }), 'HH:mm')}
-// </div>

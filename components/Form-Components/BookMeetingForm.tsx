@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 const INITIAL_STATE = {
   step: 1,
+  meetingWith: 'mentor',
   meetingType: '1 : 1 Coaching Session With John Doe',
   meetingDate: '',
 }
@@ -24,7 +25,15 @@ export const BookMeetingForm = ({ user }) => {
 
   switch (formData.step) {
     case 1:
-      return <SelectParticipants nextStep={nextStep} previousStep={previousStep} />
+      return (
+        <SelectParticipants
+          nextStep={nextStep}
+          previousStep={previousStep}
+          formData={formData}
+          setFormData={setFormData}
+          user={user}
+        />
+      )
 
     case 2:
       return (

@@ -6,17 +6,13 @@ import {
   add,
   eachDayOfInterval,
   endOfMonth,
-  endOfWeek,
   format,
   getDay,
   isEqual,
   isBefore,
   isSameDay,
-  isSameMonth,
-  isToday,
   parse,
   parseISO,
-  startOfWeek,
   startOfToday,
 } from 'date-fns'
 import { SelectedDayTimeSlots } from '../Calendar-Component/SelectedDayTimeSlots'
@@ -63,6 +59,7 @@ export const SelectDate = (props) => {
       <BackButton previousStep={previousStep} />
       <h2 className='my-5'>Book a Meeting</h2>
 
+      {/* calendar header */}
       <div className='pb-3 max-w-md text-royal-blue-dark bg-dark-salmon rounded-md'>
         <div className='py-5 grid grid-cols-4__expand-2'>
           <h3 className='pl-5'>{format(firstDayCurrentMonth, 'MMMM yyyy')}</h3>
@@ -88,6 +85,8 @@ export const SelectDate = (props) => {
           </button>
         </div>
 
+        {/* start of calendar */}
+        {/* calendar days */}
         <div className='mb-2 text-gray-500 grid grid-cols-7 gap-1 place-items-center'>
           <div>S</div>
           <div>M</div>
@@ -98,11 +97,15 @@ export const SelectDate = (props) => {
           <div>S</div>
         </div>
 
+        {/* mapping each day of graph */}
         <div className='grid grid-cols-7 gap-1'>
           {days.map((day, dayIdx) => (
             <div
               key={day.toString()}
-              className={buildClassName(dayIdx === 0 && colStartClasses[getDay(day)])}
+              className={buildClassName(
+                // makes sure day 1 lands on correct day of week
+                dayIdx === 0 && colStartClasses[getDay(day)]
+              )}
             >
               <button
                 type='button'
@@ -112,23 +115,25 @@ export const SelectDate = (props) => {
 
                   isEqual(day, selectedDay) && 'bg-royal-blue-dark text-white',
 
+                  // if current day is included in mentors available dates appply styling
                   user.mentor.availibleDatesAndTimes.some((date) =>
                     isSameDay(parseISO(date), day)
                   ) &&
                     !isBefore(day, today) &&
                     !isEqual(day, selectedDay) &&
-                    'bg-white opacity-60  cursor-pointer',
+                    'bg-white opacity-60 cursor-pointer',
 
+                  // if current day is not in mentors available days its not clickable
                   !user.mentor.availibleDatesAndTimes.find((date) =>
                     isSameDay(parseISO(date), day)
                   ) && 'pointer-events-none',
 
-                  isBefore(day, today) && 'opacity-30 pointer-events-none',
-
                   'mx-auto flex h-8 w-8 items-center justify-center rounded-full'
                 )}
               >
-                <time dateTime={format(day, 'yyyy-MM-dd')}>{format(day, 'd')}</time>
+                <time dateTime={format(day, 'yyyy-MM-dd')}>
+                  {format(day, 'd')}
+                </time>
               </button>
 
               <div className='w-1 h-1 mx-auto mt-1'>

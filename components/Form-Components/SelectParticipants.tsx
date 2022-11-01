@@ -8,7 +8,7 @@ type SelectParticipantsProps = {
 }
 
 export const SelectParticipants = (props: SelectParticipantsProps) => {
-  const { nextStep, previousStep } = props
+  const { nextStep, previousStep, user } = props
 
   return (
     <>
@@ -22,9 +22,9 @@ export const SelectParticipants = (props: SelectParticipantsProps) => {
           className='py-5 pr-2 bg-royal-blue-dark hover:bg-dark-salmon ease-in-out duration-300 rounded-md grid grid-cols-2__expand-2 cursor-pointer '
         >
           <PersonCard
-            profilePictureUrl={'/images/mentor.png'}
-            name={'John Doe'}
-            title={'CEO of Example Company'}
+            profilePictureUrl={user.mentor.profilePictureURL}
+            name={user.mentor.name}
+            title={user.mentor.title}
           />
         </div>
       </div>
@@ -34,16 +34,16 @@ export const SelectParticipants = (props: SelectParticipantsProps) => {
         <div className='bg-royal-blue-dark ease-in-out duration-300 rounded-md pt-5 cursor-not-allowed'>
           <div className='pb-5 pr-2 grid grid-cols-2__expand-2'>
             <PersonCard
-              profilePictureUrl={'/images/peer1.png'}
-              name={'Jeremy Doe'}
-              title={'Manager at Example Company'}
+              profilePictureUrl={user.peerGroup.peer1.profilePictureURL}
+              name={user.peerGroup.peer1.name}
+              title={user.peerGroup.peer1.title}
             />
           </div>
           <div className='pb-5 pr-2 grid grid-cols-2__expand-2'>
             <PersonCard
-              profilePictureUrl={'/images/peer2.png'}
-              name={'Jane Doe'}
-              title={'Manager at Example Company'}
+              profilePictureUrl={user.peerGroup.peer2.profilePictureURL}
+              name={user.peerGroup.peer2.name}
+              title={user.peerGroup.peer2.title}
             />
           </div>
         </div>
